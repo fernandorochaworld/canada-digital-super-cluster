@@ -1,8 +1,10 @@
 // 1. Buggy Calculator to Debug
+// Legend: ** = Fixes or Improvements
 
-let operation = 'add';
-let a = 5;
-let b = 3;
+// ** Fixed changing title variable to constant type
+const operation = 'add';
+const a = 5;
+const b = 3;
 let result;
 
 if (typeof a !== 'number' || typeof b !== 'number') {
@@ -11,17 +13,23 @@ if (typeof a !== 'number' || typeof b !== 'number') {
     switch (operation) {
         case 'add':
             result = a + b;
+            // ** Added break command to all the cases in the switch.
+            break;
         case 'subtract':
             result = a - b;
+            break;
         case 'multiply':
-            result = a x b; 
+            // ** Fixed the multiplication opperator from "x" to "*"
+            result = a * b;
+            break;
         case 'divide':
-            if (b == 0) { 
+            if (b == 0) {
                 console.log("Division by zero is not allowed.");
             } else {
                 result = a / b;
             }
-        default: 
+            break;
+        default:
             console.log("Invalid operation.");
     }
     console.log(`The result of ${a} ${operation} ${b} = ${result}`);
@@ -32,21 +40,28 @@ if (typeof a !== 'number' || typeof b !== 'number') {
 
 
 // 2. Convert the following if-else chain to a switch statement, while still maintaining the correct output
-let title = "Die Hard";
+// ** Fixed changing title variable to constant type
+const title = "Die Hard";
 let genre;
 
-if (title === "Star Wars") {
-    genre = "Science Fiction";
-} else if (title === "The Shawshank Redemption") {
-    genre = "Drama";
-} else if (title === "Toy Story") {
-    genre = "Animation";
-} else if (title === "Halloween") {
-    genre = "Horror";
-} else if (title === "Die Hard") {
-    genre = "Action";
-} else {
-    genre = "Unknown Genre";
+switch (title) {
+    case 'Star Wars':
+        genre = "Science Fiction";
+        break;
+    case 'The Shawshank Redemption':
+        genre = "Drama";
+        break;
+    case 'Toy Story':
+        genre = "Animation";
+        break;
+    case 'Halloween':
+        genre = "Horror";
+        break;
+    case 'Die Hard':
+        genre = "Action";
+        break;
+    default:
+        genre = "Unknown Genre";
 }
 
 console.log(`The genre of "${title}" is ${genre}.`);
@@ -56,41 +71,23 @@ console.log(`The genre of "${title}" is ${genre}.`);
 
 // Exercise #1:
 
-let number = 7;
-let type;
-
-if (number % 2 === 0) {
-    type = "Even";
-} else {
-    type = "Odd";
-}
+const number = 7;
+const type = (number % 2 === 0) ? "Even" : "Odd";
 
 console.log(`The number ${number} is ${type}.`);
 
 
 // Exercise #2: 
 
-let grade = 58;
-let outcome;
-
-if (grade >= 60) {
-    outcome = "Passing";
-} else {
-    outcome = "Failing";
-}
+const grade = 58;
+const outcome = (grade >= 60) ? "Passing" : "Failing";
 
 console.log(`With a grade of ${grade}, the outcome is: ${outcome}.`);
 
 
 // Exercise #3: 
 
-let temperature = 18;  // Celsius
-let weather;
-
-if (temperature > 20) {
-    weather = "Hot";
-} else {
-    weather = "Cold";
-}
+const temperature = 18;  // Celsius
+const weather = (temperature > 20) ? "Hot" : "Cold";
 
 console.log(`With a temperature of ${temperature}°C, it's ${weather}.`);
