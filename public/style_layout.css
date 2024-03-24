@@ -12,7 +12,9 @@ a {
     text-decoration: none;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: #8a4b08;
     text-align: center;
 }
@@ -21,6 +23,14 @@ header {
     background-color: #8a4b08;
     color: #f4e8c1;
     padding: 15px 30px;
+    display: flex;
+}
+
+/* header>button {
+    flex-shrink: 1;
+} */
+header>nav {
+    flex-grow: 1;
 }
 
 nav {
@@ -34,7 +44,8 @@ nav ul {
 nav ul li {
     display: inline-block;
     margin-right: 20px;
-    font-size: 20px;  /* Increase the font size or adjust as needed */
+    font-size: 20px;
+    /* Increase the font size or adjust as needed */
 }
 
 nav ul li a {
@@ -44,6 +55,9 @@ nav ul li a {
 .recipe-display {
     display: flex;
     justify-content: space-around;
+
+    flex-wrap: wrap;
+    gap: 35px 0px;
 }
 
 article {
@@ -53,15 +67,17 @@ article {
     border-radius: 10px;
 
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     justify-content: center;
-    align-items: center;    
+    align-items: center;
+
+    cursor: pointer;
 }
 
 article img {
-    max-width: 90%; 
-    height: auto;  
-    margin: 15px 0; 
+    max-width: 90%;
+    height: auto;
+    margin: 15px 0;
 }
 
 article p {
@@ -86,13 +102,18 @@ form {
     background-color: #f4e8c1;
 }
 
-form label, form input, form select, form textarea, form button {
+form label,
+form input,
+form select,
+form textarea,
+form button {
     width: 90%;
     margin-bottom: 10px;
     font-size: 20px;
 }
 
-form button {
+form button,
+#winter-btn {
     cursor: pointer;
     background-color: #8a4b08;
     color: #f4e8c1;
@@ -103,6 +124,51 @@ form button {
 
 article p {
     text-align: center;
+}
+
+article img,
+article p,
+article span {
+    pointer-events: none;
+}
+
+#winter-btn {
+    color: black;
+}
+
+.winter header,
+.winter form button,
+.winter footer {
+    background-color: darkcyan;
+    color: white;
+}
+
+.winter nav ul li a {
+    color: white;
+}
+
+.winter,
+body.winter,
+.winter form,
+#winter-btn {
+    background-color: lightcyan;
+}
+
+.winter form,
+.winter article,
+#winter-btn {
+    border-color: darkcyan;
+}
+
+.winter h1,
+.winter h2,
+.winter h3 {
+    color: darkcyan;
+}
+
+.winter #winter-btn {
+    background-color: #8a4b08;
+    color: #f4e8c1;
 }
 
 /* Media Queries */

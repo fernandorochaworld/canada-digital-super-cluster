@@ -20,12 +20,13 @@
             <li><a href="#">Contact</a></li>
         </ul>
     </nav>
+    <button id="winter-btn">Switch theme</button>
 </header>
 
 <main>
     <h1>All Recipes</h1>
 
-    <section class="recipe-display">
+    <section id="article-section" class="recipe-display">
         <article>
             <img src="img/veggies.jpg">
             <p>Ratatouille</p>
@@ -42,7 +43,7 @@
 
     <section class="submit-recipe">
         <h2>Submit a Recipe</h2>
-        <form action="submit_form_here" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
             <label for="image">Recipe Image:</label>
             <input type="file" id="image" name="recipeImage" required><br>
 
@@ -68,6 +69,8 @@
 <footer>
     <p>Recipe Blog &copy; 2023</p>
 </footer>
+
+<script src="./script.js"></script>
 
 </body>
 </html>
