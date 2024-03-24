@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "express": "^4.19.1",
+    "nodemon": "^3.1.0",
+    "path": "^0.12.7",
     "prompt-sync": "^4.2.0"
-  }
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "name": "canada-digital-super-cluster",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "keywords": [
+    "node.js"
+  ],
+  "author": "Joao Fernando Rocha",
+  "license": "ISC"
 }
