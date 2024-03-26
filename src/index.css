@@ -55,3 +55,7 @@ svg {
   display: block;
   max-width: 100%;
 }
+
+.clickable {
+  cursor: pointer;
+}

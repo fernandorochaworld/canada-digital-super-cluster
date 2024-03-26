@@ -1,58 +1,19 @@
 import { useState } from "react";
-import Button from "../components/Button";
 import { getCardByRace } from "../services/yugioh-service";
 import { DNA } from "react-loader-spinner";
-
-const race = {
-  monster: [
-    'Aqua',
-    'Beast',
-    'Beast-Warrior',
-    'Creator-God',
-    'Cyberse',
-    'Dinosaur',
-    'Divine-Beast',
-    'Dragon',
-    'Fairy',
-    'Fiend',
-    'Fish',
-    'Insect',
-    'Machine',
-    'Plant',
-    'Psychic',
-    'Pyro',
-    'Reptile',
-    'Rock',
-    'Sea Serpent',
-    'Spellcaster',
-    'Thunder',
-    'Warrior',
-    'Winged Beast',
-    'Wyrm',
-    'Zombie',
-  ],
-  spell: [
-    'Normal',
-    'Field',
-    'Equip',
-    'Continuous',
-    'Quick-Play',
-    'Ritual',
-  ],
-  trap: [
-    'Normal',
-    'Continuous',
-    'Counter'
-  ]
-};
+import CardDetails from "../components/CardDetails";
+import RaceSelector from "../components/RaceSelector";
 
 
 function Page2() {
+  const [card, setCard] = useState();
   const [cardList, setCardList] = useState();
   const [loading, setLoading] = useState(false);
 
   const handleClick = (race) => {
     setLoading(true);
+    setCard(null);
+    setCardList(null);
     getCardByRace(race).then(data => {
       // console.log(data)
       if (data.data.length) {
@@ -64,6 +25,12 @@ function Page2() {
         alert('No card matching your query was found.');
         setLoading(false);
       });
+  }
+
+  const handleSelectCard = (card) => {
+    setCard(card);
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
   }
 
   return (
@@ -79,41 +46,26 @@ function Page2() {
           wrapperClass="dna-wrapper"
         />
       }
-      <div className="flex item-center flex-wrap gap-2 mb-3">
 
-        <div>
-          Monsters:
-          <div className="flex item-center flex-wrap gap-2">
-            {race.monster.map(item => (
-              <Button title={item} onClick={() => handleClick(item)}></Button>
-            ))}
-          </div>
+      <RaceSelector handleClick={handleClick} />
+
+      {
+        card &&
+        <div className="my-5">
+          <CardDetails card={card} />
         </div>
-        <div>
-          Spell Cards:
-          <div className="flex item-center flex-wrap gap-2">
-            {race.spell.map(item => (
-              <Button title={item} onClick={() => handleClick(item)}></Button>
-            ))}
-          </div>
-        </div>
-        <div>
-          Trap Cards:
-          <div className="flex item-center flex-wrap gap-2">
-            {race.trap.map(item => (
-              <Button title={item} onClick={() => handleClick(item)}></Button>
-            ))}
-          </div>
-        </div>
-      </div>
+      }
+
       {
         cardList && (
           <div className="flex flex-wrap justify-items-center">
             {cardList.map(card => (
               <img
+                className="clickable"
                 src={card.card_images[0].image_url_small}
                 style={{ width: '134px', height: '180px' }}
-                />
+                onClick={() => handleSelectCard(card)}
+              />
               // width: '268px', height: '361px'
             ))}
           </div>
