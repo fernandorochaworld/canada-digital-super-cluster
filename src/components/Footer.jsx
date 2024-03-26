@@ -104,7 +104,7 @@ function Footer() {
             </div>
 
             <div class="w-full bg-black/5 p-4 text-center">
-                © 2023 Copyright: &nbsp;
+                © {(new Date()).getFullYear()} Copyright: &nbsp;
                 <a href="#!">Fernando Rocha</a>
             </div>
         </footer>
