@@ -3,6 +3,7 @@ import { getCardByRace } from "../services/yugioh-service";
 import { DNA } from "react-loader-spinner";
 import CardDetails from "../components/CardDetails";
 import RaceSelector from "../components/RaceSelector";
+import CardTable from "../components/CardTable";
 
 
 function Page2() {
@@ -57,19 +58,7 @@ function Page2() {
       }
 
       {
-        cardList && (
-          <div className="flex flex-wrap justify-items-center">
-            {cardList.map(card => (
-              <img
-                className="clickable"
-                src={card.card_images[0].image_url_small}
-                style={{ width: '134px', height: '180px' }}
-                onClick={() => handleSelectCard(card)}
-              />
-              // width: '268px', height: '361px'
-            ))}
-          </div>
-        )
+        cardList && <CardTable cardList={cardList} handleSelectCard={handleSelectCard} />
       }
     </>
   )
