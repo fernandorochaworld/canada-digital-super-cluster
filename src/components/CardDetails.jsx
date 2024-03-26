@@ -1,7 +1,7 @@
 
 function CardDetails({ card }) {
   return (
-    <div className="flex gap-5">
+    <div className="flex gap-5 flex-col md:flex-row">
 
       <img src={card.card_images[0].image_url_small} />
 

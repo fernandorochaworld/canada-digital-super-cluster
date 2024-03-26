@@ -4,13 +4,14 @@ import { useNavigate } from "react-router";
 function Navbar() {
     const navigate = useNavigate();
     const [dropMenuOpen, setDropMenuOpen] = useState(false);
+    const [hamburgerOpen, setHamburgerOpen] = useState(false);
     return (
         <nav class="bg-gray-800">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div class="relative flex h-16 items-center justify-between">
                     <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         {/* <!-- Mobile menu button--> */}
-                        <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+                        <button type="button" onClick={() => setHamburgerOpen(!hamburgerOpen)} class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
                             <span class="absolute -inset-0.5"></span>
                             <span class="sr-only">Open main menu</span>
                             {/* <!--
@@ -68,7 +69,7 @@ function Navbar() {
                                 </button>
                             </div>
 
-                                {/* <!--
+                            {/* <!--
                                 Dropdown menu, show/hide based on menu state.
 
                                 Entering: "transition ease-out duration-100"
@@ -79,7 +80,7 @@ function Navbar() {
                                 To: "transform opacity-0 scale-95"
             --> */}
                             {
-                                dropMenuOpen && 
+                                dropMenuOpen &&
                                 <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
                                     {/* <!-- Active: "bg-gray-100", Not Active: "" --> */}
                                     <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
@@ -93,15 +94,17 @@ function Navbar() {
             </div>
 
             {/* <!-- Mobile menu, show/hide based on menu state. --> */}
-            <div class="sm:hidden" id="mobile-menu" >
-                <div class="space-y-1 px-2 pb-3 pt-2">
-                    {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
-                    <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Card Search</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Race Navigation</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
-                    <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+            {hamburgerOpen &&
+                <div class="sm:hidden" id="mobile-menu" >
+                    <div class="space-y-1 px-2 pb-3 pt-2">
+                        {/* <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" --> */}
+                        <a href="#" onClick={() => navigate('/')} class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Card Search</a>
+                        <a href="#" onClick={() => navigate('/race-navigation')} class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Race Navigation</a>
+                        <a href="#" onClick={() => navigate('/about')} class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About</a>
+                        <a href="#" onClick={() => navigate('/calendar')} class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+                    </div>
                 </div>
-            </div>
+            }
         </nav>
 
     )
