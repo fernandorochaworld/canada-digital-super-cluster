@@ -1,30 +1,34 @@
+import Button from "../components/Button"
+import Input from "../components/Input"
+import { getCardByName } from "../services/yugioh-service"
 import { useState } from "react";
-import { getCardByRace } from "../services/yugioh-service";
-import { DNA } from "react-loader-spinner";
 import CardDetails from "../components/CardDetails";
-import RaceSelector from "../components/RaceSelector";
 import CardTable from "../components/CardTable";
+import { DNA } from "react-loader-spinner";
 
-
-function Page2() {
+function CardSearch() {
   const [card, setCard] = useState();
   const [cardList, setCardList] = useState();
   const [loading, setLoading] = useState(false);
 
-  const handleClick = (race) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
     setLoading(true);
     setCard(null);
     setCardList(null);
-    getCardByRace(race).then(data => {
+
+    getCardByName(e.target.cardName.value).then(data => {
       // console.log(data)
       if (data.data.length) {
         setCardList(data.data);
+        setCard(data.data[0]);
       }
       setLoading(false);
     })
       .catch(error => {
-        alert('No card matching your query was found.');
         setLoading(false);
+        alert('No card matching your query was found.');
       });
   }
 
@@ -35,7 +39,7 @@ function Page2() {
   }
 
   return (
-    <>
+    <form onSubmit={handleSubmit} className="flex flex-col gap-5">
       {
         loading &&
         <DNA
@@ -48,7 +52,8 @@ function Page2() {
         />
       }
 
-      <RaceSelector handleClick={handleClick} />
+      <Input type="text" name="cardName" title="Yu-Gi-Oh Card Name" />
+      <Button title="Search" type="submit" styleType="primary" value="search" />
 
       {
         card &&
@@ -60,8 +65,9 @@ function Page2() {
       {
         cardList && <CardTable cardList={cardList} handleSelectCard={handleSelectCard} />
       }
-    </>
+
+    </form>
   )
 }
 
-export default Page2
+export default CardSearch;

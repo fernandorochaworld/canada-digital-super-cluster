@@ -9,12 +9,12 @@ import {
 
 import { useState } from 'react'
 import './App.css'
-import Page1 from './pages/Page1'
+import CardSearch from './pages/CardSearch'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import Page2 from './pages/Page2'
-import Page3 from './pages/Page3'
-import Page4 from './pages/Page4'
+import RaceNavigation from './pages/RaceNavigation'
+import Calendar from './pages/Calendar'
+import About from './pages/About'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,10 +35,10 @@ function App() {
             <Routes>
               {
                 <>
-                  <Route path="/" element={<Page1 />} />
-                  <Route path="/page2" element={<Page2 />} />
-                  <Route path="/page3" element={<Page3 />} />
-                  <Route path="/page4" element={<Page4 />} />
+                  <Route path="/" element={<CardSearch />} />
+                  <Route path="/race-navigation" element={<RaceNavigation />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/calendar" element={<Calendar />} />
                   {/* <Route path="/task-list/:id?" element={<TaskList />} />
                   <Route path="/task-list/:taskListId/task/:taskId" element={<Task />} /> */}
                 </>
