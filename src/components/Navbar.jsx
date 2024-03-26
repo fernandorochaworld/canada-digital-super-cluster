@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import logo from '../assets/back_high.jpg';
+import userLogo from '../assets/Yugi.webp';
 
 function Navbar() {
     const navigate = useNavigate();
@@ -34,7 +36,7 @@ function Navbar() {
                     </div>
                     <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div class="flex flex-shrink-0 items-center">
-                            <img class="h-8 w-auto" src="./src/assets/back_high.jpg" alt="Your Company" />
+                            <img class="h-8 w-auto" src={logo} alt="Your Company" />
                             {/* <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" /> */}
                         </div>
                         <div class="hidden sm:ml-6 sm:block">
@@ -64,7 +66,7 @@ function Navbar() {
                                 <button onClick={() => setDropMenuOpen(!dropMenuOpen)} type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                                     <span class="absolute -inset-1.5"></span>
                                     <span class="sr-only">Open user menu</span>
-                                    <img class="h-8 w-8 rounded-full" src="./src/assets/Yugi.webp" alt="" />
+                                    <img class="h-8 w-8 rounded-full" src={userLogo} alt="" />
                                     {/* <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="" /> */}
                                 </button>
                             </div>
