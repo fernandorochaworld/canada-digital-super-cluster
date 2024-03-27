@@ -2,14 +2,11 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  useNavigate,
-  Link,
-  // Link
 } from 'react-router-dom'
 
 import { useState } from 'react'
 import './App.css'
-import CardSearch from './pages/CardSearch'
+import FavoriteBookPage from './pages/FavoriteBookPage'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 
@@ -32,7 +29,7 @@ function App() {
             <Routes>
               {
                 <>
-                  <Route path="/" element={<CardSearch />} />
+                  <Route path="/" element={<FavoriteBookPage />} />
                   {/* <Route path="/task-list/:id?" element={<TaskList />} />
                   <Route path="/task-list/:taskListId/task/:taskId" element={<Task />} /> */}
                 </>

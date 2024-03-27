@@ -1,12 +1,17 @@
+import BookList from "../components/BookList";
 import Button from "../components/Button"
 import Input from "../components/Input"
 import { getAll } from "../services/book-service"
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function FavoriteBookPage() {
   const [book, setBook] = useState();
   const [bookList, setBookList] = useState();
   const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    loadData();
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,14 +22,24 @@ function FavoriteBookPage() {
 
 
 
-    getAllBooks(e.target.bookName.value).then(data => {
-      // console.log(data)
-      if (data.data.length) {
-        setBookList(data.data);
-        setBook(data.data[0]);
-      }
-      setLoading(false);
-    })
+    // getAll()
+    //   .then(data => {
+    //     setBookList(data.data);
+    //     setBook(data.data[0]);
+    //     setLoading(false);
+    //   })
+    //   .catch(error => {
+    //     setLoading(false);
+    //     alert('No book matching your query was found.');
+    //   });
+  }
+
+  const loadData = () => {
+    getAll()
+      .then(data => {
+        setBookList(data);
+        setLoading(false);
+      })
       .catch(error => {
         setLoading(false);
         alert('No book matching your query was found.');
@@ -57,14 +72,7 @@ function FavoriteBookPage() {
       </div>
 
       {
-        book &&
-        <div className="my-5">
-          <BookDetails book={book} />
-        </div>
-      }
-
-      {
-        bookList && <BookTable bookList={bookList} handleSelectBook={handleSelectBook} />
+        bookList && <BookList bookList={bookList} handleSelectBook={handleSelectBook} />
       }
 
     </form>
