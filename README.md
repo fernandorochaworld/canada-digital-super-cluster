@@ -1,8 +1,8 @@
-# Yu-Gi-Oh Card Search
+# Favorite Book Search
 <img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" width="150px"/>
 
 ## Description
-Use of Yu-Gi-Oh Cards API
+Uses mockapi.io to create a Book API
 
 ## Setup
 Create a .env file at the project root based on the .env.sample file attached to the project.
@@ -22,14 +22,9 @@ $ npm run dev
 ```
 
 
-## Live Website
-
-https://canada-digital-super-cluster.onrender.com
-
-
 ## Screenshot
 
-<img src="./doc/Yu-Gi-Oh-Card-Search.png" width="600px"/>
+<img src="./doc/screenshot.png" width="600px"/>
 
 
 ## License
