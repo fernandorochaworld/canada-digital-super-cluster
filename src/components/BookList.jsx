@@ -2,11 +2,11 @@ import Button from "./Button";
 
 function BookList({ bookList, handleSelectBook }) {
   return (
-    <div className="flex flex-wrap justify-items-center">
+    <div>
       {bookList.map(book => (
-        <div>
+        <div className="flex items-center gap-3 mb-1">
           {book.title}
-          <Button title="❌" onClick={() => handleSelectBook(book)} />
+          <span className="clickable" onClick={() => handleSelectBook(book)}>❌</span>
         </div>
       ))}
     </div>

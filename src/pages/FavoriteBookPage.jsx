@@ -6,7 +6,6 @@ import { addBook, getAll } from "../services/book-service"
 import { useEffect, useState } from "react";
 
 function FavoriteBookPage() {
-  const [book, setBook] = useState();
   const [bookList, setBookList] = useState();
   const [loading, setLoading] = useState(false);
 
@@ -23,8 +22,6 @@ function FavoriteBookPage() {
     e.preventDefault();
 
     setLoading(true);
-    setBook(null);
-    setBookList(null);
 
     addBook(e.target.bookTitle.value)
       .then(data => {
@@ -44,10 +41,7 @@ function FavoriteBookPage() {
       .catch(handleError);
   }
 
-  const handleSelectBook = (book) => {
-    setBook(book);
-    document.body.scrollTop = 0; // For Safari
-    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  const handleRemoveBook = (book) => {
   }
 
   return (
@@ -70,7 +64,7 @@ function FavoriteBookPage() {
       </div>
 
       {
-        bookList && <BookList bookList={bookList} handleSelectBook={handleSelectBook} />
+        bookList && <BookList bookList={bookList} handleRemoveBook={handleRemoveBook} />
       }
 
     </form>
