@@ -19,7 +19,7 @@ function App() {
         <Navbar />
         <div className='flex flex-col items-center flex-grow'>
 
-          <div className="max-w-7xl px-2 pt-2 pb-8 sm:px-6 lg:px-8 w-full">
+          <div className="max-w-7xl px-4 pt-2 pb-8 sm:px-6 lg:px-8 w-full">
 
             <h1 className="tm-title-1 mb-2">
               Favorite Books

@@ -2,15 +2,15 @@
 function Footer() {
     return (
         <footer
-            class="flex flex-col items-center bg-zinc-50 text-center text-surface dark:bg-neutral-700 dark:text-white">
-            <div class="container pt-9">
-                <div class="mb-6 flex justify-center space-x-2">
+            className="flex flex-col items-center bg-zinc-50 text-center text-surface dark:bg-neutral-700 dark:text-white">
+            <div className="container pt-9">
+                <div className="mb-6 flex justify-center space-x-2">
                     <a
                         href="#!"
                         type="button"
-                        class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+                        className="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
                         data-twe-ripple-init>
-                        <span class="[&>svg]:h-5 [&>svg]:w-5">
+                        <span className="[&>svg]:h-5 [&>svg]:w-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor"
@@ -24,9 +24,9 @@ function Footer() {
                     <a
                         href="#!"
                         type="button"
-                        class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+                        className="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
                         data-twe-ripple-init>
-                        <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+                        <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor"
@@ -40,9 +40,9 @@ function Footer() {
                     <a
                         href="#!"
                         type="button"
-                        class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+                        className="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
                         data-twe-ripple-init>
-                        <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+                        <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor"
@@ -56,9 +56,9 @@ function Footer() {
                     <a
                         href="#!"
                         type="button"
-                        class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+                        className="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
                         data-twe-ripple-init>
-                        <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+                        <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor"
@@ -72,9 +72,9 @@ function Footer() {
                     <a
                         href="#!"
                         type="button"
-                        class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+                        className="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
                         data-twe-ripple-init>
-                        <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+                        <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor"
@@ -88,9 +88,9 @@ function Footer() {
                     <a
                         href="#!"
                         type="button"
-                        class="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
+                        className="rounded-full bg-transparent p-3 font-medium uppercase leading-normal text-surface transition duration-150 ease-in-out hover:bg-neutral-100 focus:outline-none focus:ring-0 dark:text-white dark:hover:bg-secondary-900"
                         data-twe-ripple-init>
-                        <span class="mx-auto [&>svg]:h-5 [&>svg]:w-5">
+                        <span className="mx-auto [&>svg]:h-5 [&>svg]:w-5">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="currentColor"
@@ -103,7 +103,7 @@ function Footer() {
                 </div>
             </div>
 
-            <div class="w-full bg-black/5 p-4 text-center">
+            <div className="w-full bg-black/5 p-4 text-center">
                 © {(new Date()).getFullYear()} Copyright: &nbsp;
                 <a href="#!">Fernando Rocha</a>
             </div>

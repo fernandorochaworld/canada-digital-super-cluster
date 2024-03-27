@@ -1,18 +1,16 @@
 import axios from 'axios';
+const baseUrl = `${import.meta.env.VITE_API_URL}/api/favorite-books/books`;
 
 export const getAll = () => {
-    const url = `${import.meta.env.VITE_API_URL}/api/favorite-books/books`;
-    const request = axios.get(url);
+    const request = axios.get(baseUrl);
     return request.then(response => response.data);
 }
 export const addBook = (title) => {
-    const url = `${import.meta.env.VITE_API_URL}/api/favorite-books/books`;
-    const request = axios.post(url, {title});
+    const request = axios.post(baseUrl, {title});
     return request.then(response => response.data);
 }
 
-export const getBookByRace = (race) => {
-    const url = `${import.meta.env.VITE_API_URL}?race=${race}`;
-    const request = axios.post(url);
+export const removeBook = (book) => {
+    const request = axios.delete(`${baseUrl}/${book.id}`);
     return request.then(response => response.data);
 }
