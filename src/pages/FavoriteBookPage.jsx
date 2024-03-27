@@ -1,7 +1,8 @@
+import { DNA } from "react-loader-spinner";
 import BookList from "../components/BookList";
 import Button from "../components/Button"
 import Input from "../components/Input"
-import { getAll } from "../services/book-service"
+import { addBook, getAll } from "../services/book-service"
 import { useEffect, useState } from "react";
 
 function FavoriteBookPage() {
@@ -13,6 +14,11 @@ function FavoriteBookPage() {
     loadData();
   }, []);
 
+  const handleError = error => {
+    setLoading(false);
+    alert('No book matching your query was found.');
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -20,30 +26,22 @@ function FavoriteBookPage() {
     setBook(null);
     setBookList(null);
 
-
-
-    // getAll()
-    //   .then(data => {
-    //     setBookList(data.data);
-    //     setBook(data.data[0]);
-    //     setLoading(false);
-    //   })
-    //   .catch(error => {
-    //     setLoading(false);
-    //     alert('No book matching your query was found.');
-    //   });
+    addBook(e.target.bookTitle.value)
+      .then(data => {
+        document.getElementsByName('bookTitle')[0].value = '';
+        loadData();
+      })
+      .catch(handleError);
   }
 
   const loadData = () => {
+    setLoading(true);
     getAll()
       .then(data => {
         setBookList(data);
         setLoading(false);
       })
-      .catch(error => {
-        setLoading(false);
-        alert('No book matching your query was found.');
-      });
+      .catch(handleError);
   }
 
   const handleSelectBook = (book) => {
@@ -66,9 +64,9 @@ function FavoriteBookPage() {
         />
       }
 
-      <div className="flex flex-gap-3">
+      <div className="flex items-end gap-3">
         <Input type="text" name="bookTitle" title="Book title" />
-        <Button title="Search" type="submit" styleType="primary" value="search" />
+        <Button title="Add Book" type="submit" styleType="primary" value="add" className="w-32" />
       </div>
 
       {

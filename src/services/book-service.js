@@ -5,9 +5,9 @@ export const getAll = () => {
     const request = axios.get(url);
     return request.then(response => response.data);
 }
-export const getBookByName = (name) => {
+export const addBook = (title) => {
     const url = `${import.meta.env.VITE_API_URL}/api/favorite-books/books`;
-    const request = axios.get(url);
+    const request = axios.post(url, {title});
     return request.then(response => response.data);
 }
 
