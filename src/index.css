@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* .card {
+    background-color: theme(colors.white);
+    border-radius: theme(borderRadius.lg);
+    padding: theme(spacing.6);
+    box-shadow: theme(boxShadow.xl);
+  } */
+
+  .tm-container {
+    @apply max-w-3xl px-4 py-2 sm:px-6 lg:px-8;
+  }
+
+  .tm-title-1 {
+    @apply text-3xl font-bold;
+  }
+  .tm-title-2 {
+    @apply text-2xl font-bold;
+  }
+
+  .tm-btn-primary {
+    @apply bg-sky-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-sky-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-600;
+  }
+
+  .tm-btn-warning {
+    @apply bg-red-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600;
+  }
+
+  .tm-btn {
+    @apply bg-slate-50 px-3 py-1.5 text-sm font-semibold leading-6 text-black shadow-sm hover:bg-slate-200 outline outline-1 outline-offset-1 outline-slate-300;
+  }
+
+  .tm-btn-transparent {
+    @apply px-3 py-1.5 text-sm font-semibold leading-6 text-black hover:bg-slate-100;
+  }
+
+  .tm-btn-disabled {
+    @apply disabled:bg-gray-200 disabled:text-gray-500 disabled:border-gray-800 disabled:shadow-none disabled:cursor-not-allowed;
+  }
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+.clickable {
+  cursor: pointer;
+}
